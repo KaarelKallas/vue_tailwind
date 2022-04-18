@@ -31,8 +31,10 @@
                     <input type="email" class=" ml-7 border-b-[1px] w-[75%] font-[roboto]">
                      <p class="ml-7 font-[poppins] mt-6">Set a password</p>
                      <div class="flex">
-                     <input type="password" class="ml-7 mb-3 border-b-[1px] w-[75%] font-[roboto]">
-                     <img src="images/eye.svg" alt="" class="w-7">
+
+                     <input v-if="showPassword" type="text" class="input ml-7 mb-3 border-b-[1px] w-[75%] font-[roboto]" v-model="password" />
+                     <input v-else type="password" class="input ml-7 mb-3 border-b-[1px] w-[75%] font-[roboto]" v-model="password">
+                     <button class="button" type="button" @click="toggleShow"><img src="images/eye.svg" alt="" class="w-7"></button>
                      </div>
                     </div>
 
@@ -43,3 +45,24 @@
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+  data() {
+    return {
+      showPassword: false,
+      password: null
+    };
+  },
+  computed: {
+    buttonLabel() {
+      return (this.showPassword) ? "Hide" : "Show";
+    }
+  },
+  methods: {
+    toggleShow() {
+      this.showPassword = !this.showPassword;
+    }
+  }
+};
+</script>
