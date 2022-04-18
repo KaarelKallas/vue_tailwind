@@ -34,7 +34,7 @@
 
                      <input v-if="showPassword" type="text" class="input ml-7 mb-3 border-b-[1px] w-[75%] font-[roboto]" v-model="password" />
                      <input v-else type="password" class="input ml-7 mb-3 border-b-[1px] w-[75%] font-[roboto]" v-model="password">
-                     <button class="button" type="button" @click="toggleShow"><img src="images/eye.svg" alt="" class="w-7"></button>
+                     <button class="button mb-4" type="button" @click="toggleShow"><img src="images/eye.svg" alt="" class="w-7"></button>
                      </div>
                     </div>
 
